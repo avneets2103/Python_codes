@@ -150,7 +150,35 @@ for i in range(0,7): #[0,1,2,3,4,5,6]
 #      You can provide default values to paramters from right to left here too.
 #
 #14.File_IO:
+#    a)Opening: f=open('<file name>','<mode>') //Note: You dont need to create any file pointer here
+#    1. 'r' mode or read mode
+#      A)f.read(a): Returns the content in the file <f> till index number a-1 and if a isnt mentioned then reads the whole file.
+#     
+#    2. 'w' mode or write mode [If file dont exsist it creates a new one]
+#      A)f.write("<string to write after erasing initial data>")
 # 
+#    3. 'a' mode or append mode [If file dont exsists then make a new and also adds at the end without deleting initial data]
+#      A)f.write("<sting to write at the end of initial data>")
+# 
+#    b)Line by Line reading:
+# Method1: 
+f=open('sample.txt','r')
+for x in f:
+    print(x)
+f.close()
+# Method2:
+f=open('sample.txt','r')
+f.readline() #reads first line
+f.readline() #reads second line and so on.
+#    
+#    c)Deleting a file: 
+import os
+os.remove('<file_name>')
+#
+#    d)Checking if file exsists?:
+if os.path.exsists("<file_name>"):
+    print(1)
+#   
 #15.Lamda functions:
 # 
 #16.OOPS:
